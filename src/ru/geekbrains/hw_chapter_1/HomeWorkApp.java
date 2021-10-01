@@ -9,20 +9,16 @@ public class HomeWorkApp {
     private static int b;
 
     public static void main(String[] args) {
-
         printThreeWords();
         checkSumSign();
         printColor();
         compareNumbers();
-        
-    }
+            }
 
     private static void printThreeWords() {
-
         System.out.println("Orange");
         System.out.println("Banana");
         System.out.println("Apple");
-
     }
 
     private static void checkSumSign() {
@@ -41,7 +37,6 @@ public class HomeWorkApp {
     }
 
     private static void printColor() {
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Введите значение \"value\"");
@@ -57,7 +52,6 @@ public class HomeWorkApp {
     }
 
     private static void compareNumbers() {
-
         System.out.println("Введите значение для \"a\"");
         a = scanner.nextInt();
 
