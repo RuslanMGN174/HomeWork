@@ -13,7 +13,8 @@ public class HomeWorkApp {
         checkSumSign();
         printColor();
         compareNumbers();
-            }
+        scanner.close();
+    }
 
     private static void printThreeWords() {
         System.out.println("Orange");
@@ -23,11 +24,11 @@ public class HomeWorkApp {
 
     private static void checkSumSign() {
 
-        System.out.println("Введите значение для \"a\"");
-        a = scanner.nextInt();
+        System.out.println("Введите число \"a\"");
+        a = inputNumber();
 
-        System.out.println("Введите значение для \"b\"");
-        b = scanner.nextInt();
+        System.out.println("Введите число \"b\"");
+        b = inputNumber();
 
         if ((a + b) >= 0) {
             System.out.println("Сумма положительная");
@@ -37,10 +38,9 @@ public class HomeWorkApp {
     }
 
     private static void printColor() {
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Введите значение \"value\"");
-        int value = scanner.nextInt();
+        System.out.println("Введите числовое значение \"value\"");
+        int value = inputNumber();
 
         if (value <= 0) {
             System.out.println("Красный");
@@ -52,16 +52,24 @@ public class HomeWorkApp {
     }
 
     private static void compareNumbers() {
-        System.out.println("Введите значение для \"a\"");
-        a = scanner.nextInt();
+        System.out.println("Введите число \"a\"");
+        a = inputNumber();
 
-        System.out.println("Введите значение для \"b\"");
-        b = scanner.nextInt();
+        System.out.println("Введите число \"b\"");
+        b = inputNumber();
 
         if (a >= b) {
             System.out.println("a >= b");
         } else {
             System.out.println("a < b");
         }
+    }
+
+    private static int inputNumber() {
+        while (!scanner.hasNextInt()) {
+            System.out.println("Вы ввели не число");
+            scanner.next();
+        }
+        return scanner.nextInt();
     }
 }
