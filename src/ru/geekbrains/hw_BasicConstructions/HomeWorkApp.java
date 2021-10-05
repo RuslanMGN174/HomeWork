@@ -21,6 +21,10 @@ public class HomeWorkApp {
         System.out.println(answer);
     }
 
+    private static boolean positiveOrNegative2(int a) {
+       return (a < 0);
+    }
+
     private static void printStrings(String str, int a) {
         for (int i = 0; i < a; i++) {
             System.out.println(str);
