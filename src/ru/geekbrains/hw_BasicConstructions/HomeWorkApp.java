@@ -5,24 +5,25 @@ import java.util.Scanner;
 
 public class HomeWorkApp {
 
-    private static Scanner scanner = new Scanner(System.in);
-    private static int a;
-
     public static void main(String[] args) throws IOException {
-
+//        System.out.println(isAmountInRange(2, 3));
+//        System.out.println(positiveOrNegative2(1));
+//        System.out.println(checkLeapYear(2021));
+//        positiveOrNegative(1);
+//        printStrings("Люблю тебя, Петра творенье!", 3);
     }
 
-    private static boolean isAmountInRange(int a, int b){
-        return (a + b) >=10 && (a + b) <= 20;
+    private static boolean isAmountInRange(int a, int b) {
+        return (a + b) >= 10 && (a + b) <= 20;
     }
 
     private static void positiveOrNegative(int a) {
-       String answer = (a < 0) ? "Отрицательное" : "Положительное";
+        String answer = (a < 0) ? "Отрицательное" : "Положительное";
         System.out.println(answer);
     }
 
     private static boolean positiveOrNegative2(int a) {
-       return (a < 0);
+        return (a < 0);
     }
 
     private static void printStrings(String str, int a) {
@@ -31,20 +32,7 @@ public class HomeWorkApp {
         }
     }
 
-    private static boolean checkLeapYear() {
-        System.out.println("Введите год");
-        a = getNumber();
+    private static boolean checkLeapYear(int a) {
         return (a % 4 == 0 && a % 100 != 0 || a % 400 == 0);
     }
-
-    private static int getNumber() {
-        System.out.println("ожидаю ввод целого числа...");
-        while (!scanner.hasNextInt()) {
-            System.out.println("Вы ввели не число");
-            scanner.next();
-        }
-        return scanner.nextInt();
-    }
-
-
 }

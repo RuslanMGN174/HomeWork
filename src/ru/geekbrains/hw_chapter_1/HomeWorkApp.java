@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class HomeWorkApp {
 
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
     private static int a;
     private static int b;
 
