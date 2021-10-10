@@ -1,7 +1,6 @@
 package ru.geekbrains.hw_chapter3;
 
 import java.util.Arrays;
-import java.util.OptionalInt;
 
 public class HomeWorkApp {
 
@@ -11,7 +10,7 @@ public class HomeWorkApp {
 //        lessThan6Array();
 //        twoDimensionalArray();
 //        System.out.println(Arrays.toString(someArray(8, 4)));
-//        minA/ndMax(new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1});
+//        minAndMax(new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1});
 //        shiftElementsOfArray(new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1},-1);
 //        System.out.println(isTwoHalvesEqual(new int[]{1, 5, 3, 2, 4, 1, 1}));
     }
@@ -20,10 +19,9 @@ public class HomeWorkApp {
     // Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ].
     // С помощью цикла и условия заменить 0 на 1, 1 на 0;
     private static void arrayOfInt() {
-        int[] array = {0, 1, 0, 1, 0, 1, 0};
-        for (int i = 0; i < array.length; i++) {
-            array[i] = array[i] == 0 ? 1 : 0;
-        }
+        int[] array = Arrays.stream(new int[]{0, 1, 0, 1, 0, 1, 0})
+                .map(a -> a == 0 ? 1 : 0)
+                .toArray();
         System.out.println(Arrays.toString(array));
     }
 
