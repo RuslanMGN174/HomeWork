@@ -9,6 +9,7 @@ public class HomeWorkApp {
 //        arrayOf100Int();
 //        lessThan6Array();
 //        twoDimensionalArray();
+        twoDimensionalArray2();
 //        System.out.println(Arrays.toString(someArray(8, 4)));
 //        minAndMax(new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1});
 //        shiftElementsOfArray(new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1},-1);
@@ -49,10 +50,23 @@ public class HomeWorkApp {
     // Определить элементы одной из диагоналей можно по следующему принципу:
     // индексы таких элементов равны, то есть [0][0], [1][1], [2][2], …, [n][n];
     private static void twoDimensionalArray() {
-        int[][] array = new int[8][8];
+        int[][] array = new int[16][16];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
                 array[i][j] = (i + j) % 2 == 0 ?  1 : 0;
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    private static void twoDimensionalArray2() {
+        int[][] array = new int[7][7];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (i == j || (Math.abs(i + j)) == array.length - 1){
+                    array[i][j] = 1;
+                }
                 System.out.print(array[i][j] + " ");
             }
             System.out.println();
