@@ -1,12 +1,16 @@
 package ru.geekbrains.hw_ticTacToe;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Human implements Playable {
+public class Human extends Player {
 
-    private final int gameFieldSize = GameField.getSIZE();
     private final char playerSymbol = CellMark.X_MARK.getSymbol();
     private Scanner scanner = new Scanner(System.in);
+
+    public Human(String name) {
+        super(name);
+    }
 
     @Override
     public void turn(GameField gameField) {
@@ -16,8 +20,8 @@ public class Human implements Playable {
             row = readValue();
             col = readValue();
 
-            if (!checkRange(row) || !checkRange(col)) {
-                System.out.println("Координаты должны быть в дипазоне от 1 до " + gameFieldSize);
+            if (!checkRange(gameField, row) || !checkRange(gameField, col)) {
+                System.out.println("Координаты должны быть в дипазоне от 1 до " + gameField.getSIZE());
                 continue;
             }
 
@@ -29,12 +33,15 @@ public class Human implements Playable {
         } while (true);
 
         gameField.setCell(row - 1, col - 1, playerSymbol);
-        gameField.winCheck(playerSymbol);
         gameField.print();
-        drawCheck(gameField);
-    }
+        gameField.updateWinStatus(playerSymbol);
+        System.out.println("--------------");
+//        System.out.println(Arrays.toString(gameField.getRowPreWinCell()));
+        System.out.println(Arrays.toString(gameField.getColPreWinCell()));
+//        System.out.println(Arrays.toString(gameField.getDiag_1_PreWinCell()));
+//        System.out.println(Arrays.toString(gameField.getDiag_2_PreWinCell()));
 
-    public void printWinner(GameField gameField){
+        System.out.println();
     }
 
     private int readValue() {
@@ -45,8 +52,7 @@ public class Human implements Playable {
         return scanner.nextInt();
     }
 
-    private boolean checkRange(int index) {
-        return index >= 1 && index <= gameFieldSize;
-
+    private boolean checkRange(GameField gameField, int index) {
+        return index >= 1 && index <= gameField.getSIZE();
     }
 }
