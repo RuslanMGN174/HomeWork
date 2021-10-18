@@ -11,7 +11,6 @@ public class GameField {
     private int[] colPreWinCell;
     private int[] diag_1_PreWinCell;
     private int[] diag_2_PreWinCell;
-    private int[] emptyCell;
 
     private char[][] gameField;
     private boolean hasWinner;

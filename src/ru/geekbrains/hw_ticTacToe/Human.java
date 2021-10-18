@@ -1,6 +1,5 @@
 package ru.geekbrains.hw_ticTacToe;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Human extends Player {
@@ -35,11 +34,6 @@ public class Human extends Player {
         gameField.setCell(row - 1, col - 1, playerSymbol);
         gameField.print();
         gameField.updateWinStatus(playerSymbol);
-        System.out.println("--------------");
-//        System.out.println(Arrays.toString(gameField.getRowPreWinCell()));
-        System.out.println(Arrays.toString(gameField.getColPreWinCell()));
-//        System.out.println(Arrays.toString(gameField.getDiag_1_PreWinCell()));
-//        System.out.println(Arrays.toString(gameField.getDiag_2_PreWinCell()));
 
         System.out.println();
     }
