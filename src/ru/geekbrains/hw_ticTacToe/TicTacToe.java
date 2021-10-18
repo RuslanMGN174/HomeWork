@@ -12,6 +12,5 @@ public class TicTacToe {
     public static void main(String[] args) {
         gameField.build();
         Game.start(gameField, player1, player2);
-
     }
 }
