@@ -7,13 +7,17 @@ public class Game {
 
             if (isDraw(gameField)) break;
             player2.turn(gameField);
-            if (gameFieldStatusCheck(gameField.isHasWinner(), "Победил " + player2.getName())) break;
+            if (isWin(gameField, player2)) break;
 
             if (isDraw(gameField)) break;
             player1.turn(gameField);
-            if (gameFieldStatusCheck(gameField.isHasWinner(), "Победил " + player1.getName())) break;
+            if (isWin(gameField, player1)) break;
 
         }
+    }
+
+    private static boolean isWin(GameField gameField, Player player) {
+        return gameFieldStatusCheck(gameField.isHasWinner(), "Победил " + player.getName());
     }
 
     private static boolean isDraw(GameField gameField) {
