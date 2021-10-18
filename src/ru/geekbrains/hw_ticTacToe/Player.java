@@ -1,6 +1,6 @@
 package ru.geekbrains.hw_ticTacToe;
 
-public class Player implements Playable{
+public abstract class Player implements Playable {
 
     private String name;
 
@@ -8,16 +8,15 @@ public class Player implements Playable{
         this.name = name;
     }
 
+    @Override
+    public abstract void turn(GameField gameField);
+
     String getName() {
         return name;
     }
 
-    protected void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
-    @Override
-    public void turn(GameField gameField) {
-
-    }
 }
