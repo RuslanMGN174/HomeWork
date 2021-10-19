@@ -3,20 +3,18 @@ package ru.geekbrains.hw_chapter6;
 public abstract class Animal {
 
     protected String name;
-    protected int distance;
-    private int animalCount;
+    private static int animalCount;
 
     public Animal(String name) {
         this.name = name;
         animalCount++;
     }
 
-    private void run(int distance) {
+    abstract void run(int distance);
 
+    abstract void swim(int distance);
+
+    static int getAnimalCount() {
+        return animalCount;
     }
-
-    private void swim(int distance) {
-
-    }
-
 }
