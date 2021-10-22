@@ -1,6 +1,7 @@
 package ru.geekbrains.hw_chapter5;
 
 public class Employee {
+
     private String firstName;
     private String lastName;
     private String position;
@@ -20,21 +21,7 @@ public class Employee {
     }
 
     void getEmploeeInfo() {
-        System.out.printf(
-                "Фамилия: %s\n" +
-                        "Имя: %s\n" +
-                        "Должность: %s\n" +
-                        "Электронная почта: %s\n" +
-                        "Номер телефона: %s\n" +
-                        "Зарплата: %d\n" +
-                        "Возраст: %d\n",
-                this.getLastName(),
-                this.getFirstName(),
-                this.getPosition(),
-                this.getEmail(),
-                this.getPhoneNumber(),
-                this.getSalary(),
-                this.getAge());
+        System.out.println(toString());
     }
 
     String getFirstName() {
@@ -91,6 +78,11 @@ public class Employee {
 
     private void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", position='" + position + '\'' + ", email='" + email + '\'' + ", phoneNumber='" + phoneNumber + '\'' + ", salary=" + salary + ", age=" + age + '}';
     }
 }
 

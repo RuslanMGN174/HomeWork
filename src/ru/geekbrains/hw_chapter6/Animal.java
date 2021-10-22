@@ -5,8 +5,11 @@ public abstract class Animal {
     protected String name;
     private static int animalCount;
 
-    public Animal(String name) {
+    protected int stamina;
+
+    public Animal(String name, int stamina) {
         this.name = name;
+        this.stamina = stamina;
         animalCount++;
     }
 

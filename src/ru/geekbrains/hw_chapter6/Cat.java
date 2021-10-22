@@ -4,16 +4,16 @@ public class Cat extends Animal{
 
     private static int catCount;
 
-    public Cat(String name) {
-        super(name);
+    public Cat(String name, int stamina) {
+        super(name, stamina);
         catCount++;
     }
 
     @Override
     void run(int distance) {
-        System.out.printf(distance > 200
-                ? "Дальность бега кота не больше 200м%n"
-                : "%s пробежал %dм%n", name, distance);
+        System.out.printf(distance > stamina
+                ? "Дальность бега кота не больше %2$dм%n"
+                : "%s пробежал %dм%n", name, stamina);
     }
 
     @Override

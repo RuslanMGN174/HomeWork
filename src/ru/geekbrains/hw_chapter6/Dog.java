@@ -4,23 +4,23 @@ public class Dog extends Animal {
 
     private static int dogCount;
 
-    public Dog(String name) {
-        super(name);
+    public Dog(String name, int stamina) {
+        super(name, stamina);
         dogCount++;
     }
 
     @Override
     void run(int distance) {
-        System.out.printf(distance > 500
-                ? "Дальность бега собаки не больше 500м%n"
-                : "%s пробежал %dм%n", name, distance);
+        System.out.printf(distance > stamina
+                ? "Дальность бега собаки не больше %2$dм%n"
+                : "%s пробежал %dм%n", name, stamina);
     }
 
     @Override
     void swim(int distance) {
-        System.out.printf(distance > 10
-                ? "Дальность заплыва собаки не больше 10м%n"
-                : "%s проплыл %dм%n", name, distance);
+        System.out.printf(distance > stamina
+                ? "Дальность заплыва собаки не больше %2$dм%n"
+                : "%s проплыл %dм%n", name, stamina);
     }
 
     static int getDogCount() {
