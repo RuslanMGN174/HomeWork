@@ -21,6 +21,7 @@ public class CounterButtons {
         createCounterView(mainFrame, font);
         createButtons(mainFrame, font);
         createTextField(mainFrame);
+        createResetButton(mainFrame);
 
         mainFrame.setVisible(true);
     }
@@ -81,6 +82,21 @@ public class CounterButtons {
                 }
             }
         });
+    }
+
+    private static void createResetButton(JFrame mainFrame) {
+        JButton resetButton = new JButton("Сброс");
+        mainFrame.add(resetButton, BorderLayout.SOUTH);
+
+        resetButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                counter = 0;
+                counterValueView.setText(String.valueOf(counter));
+            }
+        });
+
     }
 
     private static JFrame initFrame() {
