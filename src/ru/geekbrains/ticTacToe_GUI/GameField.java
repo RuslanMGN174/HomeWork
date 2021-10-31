@@ -10,8 +10,8 @@ public class GameField implements ActionListener {
     private int SIZE;
     private int WINSTREAK;
 
-    private final Icon computerSymbol = new ImageIcon("res/" + "O_Mark.png");
-    private final Icon playerSymbol = new ImageIcon("res/" + "X_Mark.png");
+    private final Icon computerSymbol = new ImageIcon("E:\\Java\\Geekbrains\\Chapter1\\HomeWork\\res\\" + "O_Mark.png");
+    private final Icon playerSymbol = new ImageIcon("E:\\Java\\Geekbrains\\Chapter1\\HomeWork\\res\\" + "X_Mark.png");
 
     private JButton[][] gameArea;
     private JButton clickedButton;
